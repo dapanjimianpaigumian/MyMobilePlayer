@@ -1,0 +1,6 @@
+2017/5/9
+SplashActivity
+1. onTouchEvent
+   只要触摸屏幕就会触发此方法，并且跳过onCreat方法；
+2. mHandler.removeCallbacksAndMessages(null);
+   移除所有的回调和消息，一般放在onDestroy方法中
