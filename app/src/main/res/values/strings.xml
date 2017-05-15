@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">手机影音</string>
     <string name="standby">正在启动</string>
+    <string name="video">本地视频</string>
+    <string name="audio">本地音频</string>
+    <string name="netvideo">网络视频</string>
+    <string name="netaudio">网络音频</string>
 </resources>

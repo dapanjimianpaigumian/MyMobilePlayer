@@ -1,11 +1,12 @@
-package com.dapanjimianpaigumian.mymobileplayer;
+package com.dapanjimianpaigumian.mymobileplayer.activity;
 
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 
-import com.dapanjimianpaigumian.mymobileplayer.commons.ActivityUtils;
+import com.dapanjimianpaigumian.mymobileplayer.R;
+import com.dapanjimianpaigumian.mymobileplayer.utils.ActivityUtils;
 
 public class SplashActivity extends AppCompatActivity {
 

@@ -4,3 +4,32 @@ SplashActivity
    只要触摸屏幕就会触发此方法，并且跳过onCreat方法；
 2. mHandler.removeCallbacksAndMessages(null);
    移除所有的回调和消息，一般放在onDestroy方法中
+
+2017/5/10
+MainActivity / Bottombar
+1. 导入依赖 compile 'com.roughike:bottom-bar:2.3.1'时，发生错误：
+
+   Error:Execution failed for task ':app:processDebugManifest'.
+   > Manifest merger failed : Attribute meta-data#android.support.VERSION@value value=(25.3.1) from
+   [com.android.support:appcompat-v7:25.3.1] AndroidManifest.xml:27:9-31 is also present at
+   [com.android.support:design:25.3.0] AndroidManifest.xml:27:9-31 value=(25.3.0).
+   Suggestion: add 'tools:replace="android:value"' to <meta-data> element at
+   AndroidManifest.xml:25:5-27:34 to override.
+
+   解决方法：Problem is that all support libraries with same version and major version has to match
+            compile SDK version. So try to force a specific support library version. Put this at
+            the end of your app module in build.gradle :
+
+            configurations.all {
+                resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+                    def requested = details.requested
+                    if (requested.group == 'com.android.support') {
+                        if (!requested.name.startsWith("multidex")) {
+                            details.useVersion '25.3.0'
+                        }
+                    }
+                }
+            }
+2. 使用步骤：
+   1> Define your tabs in an XML resource file.
+   2>  add the BottomBar to your layout and give it a resource id for your tabs xml file.

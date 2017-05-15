@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+
+    <tab
+        icon="@drawable/tab_video"
+        id="@+id/tab_video"
+        title="本地视频" />
+    <tab
+        icon="@drawable/tab_audio"
+        id="@+id/tab_audio"
+        title="本地音频" />
+    <tab
+        icon="@drawable/tab_netvideo"
+        id="@+id/tab_netvideo"
+        title="网络视频" />
+    <tab
+        icon="@drawable/tab_netaudio"
+        id="@+id/tab_netaudio"
+        title="网络音频" />
+
+</tabs>
